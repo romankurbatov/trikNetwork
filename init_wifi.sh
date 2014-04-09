@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-trikrc=/home/root/.trikrc
+trikrc=/etc/trik/trikrc
 interface=wlan0
 
 if [ ! -f $trikrc ]
@@ -33,6 +33,6 @@ fi
 
 if [ $trik_wifi_mode = ap ]
 	then
-		sh /home/root/set_wifi_mode.sh ap
+		sh /etc/trik/set_wifi_mode.sh ap
 fi
 

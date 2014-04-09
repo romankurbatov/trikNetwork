@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-trikrc=/home/root/.trikrc
+trikrc=/etc/trik/trikrc
 interface=wlan0
 hostapd_conf=/etc/hostapd.conf
 
