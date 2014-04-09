@@ -33,6 +33,6 @@ fi
 
 if [ $trik_wifi_mode = ap ]
 	then
-		sh /etc/trik/set_wifi_mode.sh ap
+		/etc/trik/set_wifi_mode.sh ap
 fi
 
