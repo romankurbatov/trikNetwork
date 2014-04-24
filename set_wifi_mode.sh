@@ -67,7 +67,6 @@ if [ ! -f $trikrc ]
 fi
 
 sed --in-place '/^trik_wifi_mode=/d' $trikrc
-echo "trik_wifi_mode=$1" >>$trikrc
 
 case "$1" in
 	"client")
@@ -94,4 +93,6 @@ case "$1" in
 		udhcpd
 		;;
 esac
+
+echo "trik_wifi_mode=$1" >>$trikrc
 
