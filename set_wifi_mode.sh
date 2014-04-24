@@ -16,7 +16,6 @@
 
 trikrc=/etc/trik/trikrc
 interface=wlan0
-hostapd_conf=/etc/hostapd.conf
 
 generate_ap_ssid() {
 	sed --in-place '/^trik_wifi_ap_ssid=/d' $trikrc
@@ -58,7 +57,8 @@ if [ ! $1 = "client" ] && [ ! $1 = "ap" ]
 		exit 1
 fi
 
-killall -q hostapd udhcpd
+killall -q udhcpd
+/etc/init.d/hostapd stop
 ifdown $interface
 
 if [ ! -f $trikrc ]
@@ -88,7 +88,7 @@ case "$1" in
 
 		generate_hostapd_conf
 
-		hostapd -B $hostapd_conf
+		/etc/init.d/hostapd start
 		ifconfig $interface 192.168.1.1 netmask 255.255.255.0
 		udhcpd
 		;;
